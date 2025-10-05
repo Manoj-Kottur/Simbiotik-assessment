@@ -1,0 +1,26 @@
+{
+    "/weather": {
+        "target": "https://api.openweathermap.org/data/2.5",
+        "secure": true,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/weather": ""
+        }
+    },
+    "/osrm": {
+        "target": "https://router.project-osrm.org",
+        "secure": true,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/osrm": ""
+        }
+    },
+    "/nominatim": {
+        "target": "https://nominatim.openstreetmap.org",
+        "secure": true,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/nominatim": ""
+        }
+    }
+}

@@ -1,0 +1,24 @@
+.fromToSuggestions {
+    position: absolute;
+    z-index: 50345340;
+    background: white;
+    overflow: auto;
+    width: 27%;
+    max-height: 300px;
+    cursor: pointer;
+}
+
+.to {
+    left: 55%;
+}
+
+@media screen and (max-width: 426px) {
+    .mapMain {
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        margin-top: 12em;
+        padding: 1em;
+        height: 100%;
+    }
+}

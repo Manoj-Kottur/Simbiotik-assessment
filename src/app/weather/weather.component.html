@@ -1,0 +1,36 @@
+<div class="max-w-3xl mx-auto weatherMain">
+  <h2 class="text-2xl font-bold mb-4">Current Weather</h2>
+  <div class="mb-3">
+    <form (submit)="getCityTemperature()" ngNativeValidate>
+      <input name="City" placeholder="City" class="border px-2 py-1" [(ngModel)]="city"/>
+      <button type="submit" class="search-button ml-2">Search</button>
+    </form>
+  </div>
+
+  <div *ngIf="loading" class="w-full h-2 bg-blue-500 animate-pulse mb-2"></div>
+  <div *ngIf="error" class="p-3 bg-yellow-200 text-yellow-800">Failed to load.
+    <button class="retry-button" aria-label="Retry" (click)="retry()">
+      <svg class="retry-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+        <path fill="currentColor"
+            d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+      </svg>
+      Retry
+    </button>
+  </div>
+
+  <div *ngIf="current">
+    <p>City: {{ current.name }}</p>
+    <p>Current Temp: {{ current.main.temp | number:'1.1-1' }} °C</p>
+  </div>
+
+  
+  <div *ngIf="avgTemp">
+    <h3 class="mt-4 font-semibold">Next 4-day Forecast (avg)</h3>
+    <p>Average Temp (Next 4 Days): {{ avgTemp | number:'1.1-1' }} °C</p>
+  </div>
+
+  <h3 class="mt-4 font-semibold">5-day Forecast (Including Today)</h3>
+  <ul>
+    <li *ngFor="let f of forecast">{{f.date}} — {{f.avgTempC | number:'1.1-1'}} °C</li>
+  </ul>
+</div>

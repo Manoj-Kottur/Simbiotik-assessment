@@ -1,0 +1,13 @@
+<div class="bg-white p-4 rounded shadow">
+  <h3 class="font-semibold">Create / Edit TODO</h3>
+  <form (ngSubmit)="save()">
+    <input class="border w-full px-2 py-1 my-2" [(ngModel)]="model.title" name="title" placeholder="Title" required/>
+    <textarea class="border w-full px-2 py-1 my-2" [(ngModel)]="model.description" name="description" placeholder="Description"></textarea>
+    <label class="flex items-center gap-2"><input type="checkbox" [(ngModel)]="model.completed" name="completed"/> Completed</label>
+    <div class="mt-2">
+      <button class="bg-green-600 text-white px-3 py-1 rounded" type="submit">Save</button>
+      <button type="button" (click)="clear()" class="ml-2">Clear</button>
+    </div>
+  </form>
+</div>
+

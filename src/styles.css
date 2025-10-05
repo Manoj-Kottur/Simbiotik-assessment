@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, app-root, #root {
+  height: 100%;
+}
+
+/* Leaflet container fix */
+#map { height: 100%; }

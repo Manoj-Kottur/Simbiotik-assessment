@@ -1,0 +1,13 @@
+<div class="fixed inset-0 bg-black/40 flex items-center justify-center">
+  <div class="bg-white p-4 rounded shadow w-96">
+    <h4 class="font-bold mb-2">TODO Detail</h4>
+    <div *ngIf="todo">
+      <p><strong>Title:</strong> {{todo.title}}</p>
+      <p><strong>Description:</strong> {{todo.description}}</p>
+      <p><strong>Completed:</strong> {{todo.completed ? true : false}}</p>
+    </div>
+    <div class="mt-4 text-right">
+      <button (click)="close.emit()" class="px-3 py-1">Close</button>
+    </div>
+  </div>
+</div>

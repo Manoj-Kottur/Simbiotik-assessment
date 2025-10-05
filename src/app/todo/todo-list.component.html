@@ -1,0 +1,31 @@
+<div class="max-w-3xl mx-auto todolistMain">
+  <h2 class="text-2xl font-bold mb-4">TODOs</h2>
+  <app-todo-form (saved)="onSaved()"></app-todo-form>
+
+  <table class="w-full mt-4">
+    <thead><tr><th>Title</th><th>Completed</th><th>Actions</th></tr></thead>
+    <tbody>
+      <tr *ngFor="let t of todos">
+        <td class="text-center">{{ t.title }}</td>
+        <td class="text-center">
+          {{t.completed ? true: false}}
+        </td>
+        <td>
+          <div class="action-buttons">
+            <button class="action-btn view-btn" (click)="view(t)">
+              <i class="fas fa-eye"></i> View
+            </button>
+            <button class="action-btn edit-btn" (click)="edit(t)">
+              <i class="fas fa-edit"></i> Edit
+            </button>
+            <button class="action-btn delete-btn" (click)="remove(t)">
+              <i class="fas fa-trash"></i> Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-todo-detail *ngIf="selected" [todoId]="selected" (close)="selected=null"></app-todo-detail>
+</div>

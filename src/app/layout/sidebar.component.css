@@ -1,0 +1,28 @@
+.logoutButtonDiv {
+    position: absolute;
+    bottom: 1em;
+    width: 100%;
+    left: 0;
+}
+
+.logoutButtonDiv button {
+    position: relative;
+    left: 16px;
+}
+
+@media screen and (max-width: 426px) {
+    .sidebar {
+        display: block;
+        width: 100vw;
+        height: 200px !important;
+    }
+
+    .logoutButtonDiv {
+        top: -11px;
+        height: fit-content;
+        display: inline-block;
+        width: fit-content;
+        right: 25px !important;
+        left: auto;
+    }
+}
